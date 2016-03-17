@@ -9,6 +9,9 @@ class PagesController < ApplicationController
   end
 
   def find_closest_trucks
-    @trucks = FoodTruck.near(params[:address]).paginate(:page => params[:page], :per_page => 5)
+    @trucks = FoodTruck.near(params[:address], 1).paginate(:page => params[:page], :per_page => 5)
+    respond_to do |format|
+      format.js
+    end
   end
 end

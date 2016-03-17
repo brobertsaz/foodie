@@ -6,7 +6,7 @@
 .container
   .col-xs-10.col-xs-offset-1
     .col-xs-6
-      = bootstrap_form_tag url: find_closest_trucks_pages_path, method: :get do |f|
+      = bootstrap_form_tag url: find_closest_trucks_pages_path, method: :get, remote: :true do |f|
         = f.text_field :address, label: "Enter Address"
         = f.submit "Go", class: 'btn btn-primary btn-sm'
     .col-xs-6
