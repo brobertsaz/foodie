@@ -1,0 +1,17 @@
+.jumbotron
+  .container
+    %h1 Where's the Beef?
+    %p You are hungry and you NEED to know where the closest food truck is!
+    %p
+      %a.btn.btn-primary.btn-lg{:href => "#", :role => "button"} Learn more &raquo;
+.container
+  .col-xs-12
+    #map{:style => "width: 95%; height: 400px;"}
+
+:javascript
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+    markers = handler.addMarkers( #{@hash.to_json} );
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
+  });
