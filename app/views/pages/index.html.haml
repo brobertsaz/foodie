@@ -5,13 +5,49 @@
     %p
       %a.btn.btn-primary.btn-lg{:href => "#", :role => "button"} Learn more &raquo;
 .container
+  .col-xs-10
+    = bootstrap_form_tag url: find_closest_trucks_pages_path, method: :get, remote: :true do |f|
+      = f.text_field :address, label: "Enter Address"
+      = f.submit "Go", class: 'btn btn-primary btn-sm'
   .col-xs-12
-    #map{:style => "width: 95%; height: 400px;"}
+    .col-xs-4
+      %h3 Closest Locations
+    .col-xs-8
+      #map{:style => "width: 95%; height: 400px;"}
+
 
 :javascript
-  handler = Gmaps.build('Google');
-  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-    markers = handler.addMarkers( #{@hash.to_json} );
-    handler.bounds.extendWith(markers);
-    handler.fitMapToBounds();
-  });
+  $(document).ready(function(){
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers( #{@hash.to_json} );
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+
+    // function success(position) {
+    //   var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+    //   var options = {
+    //     zoom: 15,
+    //     center: coords,
+    //     mapTypeControl: false,
+    //     navigationControlOptions: {
+    //       style: google.maps.NavigationControlStyle.SMALL
+    //     },
+    //     mapTypeId: google.maps.MapTypeId.ROADMAP
+    //   };
+
+    //   var marker = new google.maps.Marker({
+    //       position: coords,
+    //       map: map,
+    //       title:"You are here!"
+    //   });
+    // }
+
+    // if (navigator.geolocation) {
+    //   navigator.geolocation.getCurrentPosition(success);
+    // } else {
+    //   error('Geo Location is not supported');
+    // }
+  })
