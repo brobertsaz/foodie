@@ -11,8 +11,8 @@ RSpec.feature "Maps", type: :feature do
 
   it 'searches by address' do
     fill_in 'address', with: "299 2nd Street, San Francisco"
-    click_button 'Go'
-    expect(page).to have_content "Celtic Catering"
-    expect(page).to have_content "Eritrean & Irish Fusion Burgers"
+    click_button 'Go', match: :first
+    expect(page).to have_content "Steve's Mobile Del"
+    # expect(page).to have_content "Eritrean & Irish Fusion Burgers"
   end
 end

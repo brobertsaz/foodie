@@ -1,0 +1,9 @@
+%ul
+  - @trucks.each do |t|
+    %li.title
+      = t.name
+    %li= t.address
+    %li= t.facility_type
+    %hr
+  .pagination
+    = will_paginate @trucks, inner_window: 1, outer_window: 1

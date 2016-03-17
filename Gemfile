@@ -28,6 +28,8 @@ gem 'gmaps4rails'
 gem 'httparty'
 gem 'simple_form'
 gem 'bootstrap_form'
+gem 'geocoder'
+gem 'will_paginate', '~> 3.0.6'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,5 +56,6 @@ group :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'capybara', '2.4.0'
+  gem 'factory_girl_rails'
 end
 

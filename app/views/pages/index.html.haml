@@ -1,19 +1,24 @@
-.jumbotron
+.jumbotron.text-center
   .container
     %h1 Where's the Beef?
     %p You are hungry and you NEED to know where the closest food truck is!
-    %p
-      %a.btn.btn-primary.btn-lg{:href => "#", :role => "button"} Learn more &raquo;
+
 .container
-  .col-xs-10
-    = bootstrap_form_tag url: find_closest_trucks_pages_path, method: :get, remote: :true do |f|
-      = f.text_field :address, label: "Enter Address"
-      = f.submit "Go", class: 'btn btn-primary btn-sm'
+  .col-xs-10.col-xs-offset-1
+    .col-xs-6
+      = bootstrap_form_tag url: find_closest_trucks_pages_path, method: :get, remote: :true do |f|
+        = f.text_field :address, label: "Enter Address"
+        = f.submit "Go", class: 'btn btn-primary btn-sm'
+    .col-xs-6
+      %p.go-text Use my Location
+      = button_to "Go", "", class: 'btn btn-primary btn-sm'
   .col-xs-12
     .col-xs-4
       %h3 Closest Locations
+      #truck-locations
+        = render 'trucks'
     .col-xs-8
-      #map{:style => "width: 95%; height: 400px;"}
+      #map
 
 
 :javascript
