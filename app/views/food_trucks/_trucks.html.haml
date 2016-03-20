@@ -5,7 +5,6 @@
         = link_to truck.name, show_location_food_trucks_path(truck: truck), method: :put, remote: :true
       %li= truck.address
       %li= truck.facility_type
-      - binding.pry
       - if truck.food_items.present?
         %li= truck.food_items
       - if @address_result.present?
