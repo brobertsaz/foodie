@@ -9,7 +9,7 @@ responses.each do |response|
   address = response['address']
   location_description = response['locationdescription']
   facility_type = response['facilitytype']
-  food_items = response['FoodItems']
+  food_items = response['fooditems']
 
   truck = FoodTruck.create(name: name, longitude: longitude, latitude: latitude,
                           location_description: location_description, address: address,

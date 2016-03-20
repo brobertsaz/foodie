@@ -1,5 +1,6 @@
 %ul
   - if @trucks
+    - binding.pry
     - @trucks.each do |t|
       %li.title
         = link_to t.name, show_location_food_trucks_path(truck: t), method: :put, remote: :true
