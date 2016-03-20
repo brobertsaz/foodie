@@ -4,55 +4,9 @@
     %p You are hungry and you NEED to know where the closest food truck is!
 
 .container
-  .col-xs-10.col-xs-offset-1
-    .col-xs-6
-      = bootstrap_form_tag url: find_closest_trucks_pages_path, method: :get, remote: :true do |f|
-        = f.text_field :address, label: "Enter Address"
-        = f.submit "Go", class: 'btn btn-primary btn-sm'
-    .col-xs-6
-      %p.go-text Use my Location
-      = button_to "Go", "", class: 'btn btn-primary btn-sm'
-  .col-xs-12
-    .col-xs-4
-      %h3 Closest Locations
-      #truck-locations
-        = render 'trucks'
-    .col-xs-8
-      #map
-
-
-:javascript
-  $(document).ready(function(){
-    handler = Gmaps.build('Google');
-    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-      markers = handler.addMarkers( #{@hash.to_json} );
-      handler.bounds.extendWith(markers);
-      handler.fitMapToBounds();
-    });
-
-    // function success(position) {
-    //   var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
-    //   var options = {
-    //     zoom: 15,
-    //     center: coords,
-    //     mapTypeControl: false,
-    //     navigationControlOptions: {
-    //       style: google.maps.NavigationControlStyle.SMALL
-    //     },
-    //     mapTypeId: google.maps.MapTypeId.ROADMAP
-    //   };
-
-    //   var marker = new google.maps.Marker({
-    //       position: coords,
-    //       map: map,
-    //       title:"You are here!"
-    //   });
-    // }
-
-    // if (navigator.geolocation) {
-    //   navigator.geolocation.getCurrentPosition(success);
-    // } else {
-    //   error('Geo Location is not supported');
-    // }
-  })
+  .search-bar
+    = bootstrap_form_tag url: find_closest_trucks_pages_path, method: :get, remote: :true do |f|
+      = f.text_field :address, hide_label: true, placeholder: "Enter your address..."
+      = f.submit "Go", class: 'btn btn-primary btn-sm'
+  .col-xs-12#map-section
+    = render 'show_trucks'

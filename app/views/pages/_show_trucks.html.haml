@@ -1,0 +1,22 @@
+.col-xs-4
+  %h3 Closest Locations
+  #truck-locations
+    = render 'trucks'
+.col-xs-8
+  #map
+
+:javascript
+  $(document).ready(function(){
+    handler = Gmaps.build('Google');
+    handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+      markers = handler.addMarkers( #{@hash.to_json} );
+      if ( #{@location.present?} == true ) {
+        var myLocation = ( #{@location.to_json} );
+        handler.addMarker(myLocation);
+        handler.map.centerOn(myLocation);
+      };
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+    });
+
+  })

@@ -4,6 +4,9 @@
       = t.name
     %li= t.address
     %li= t.facility_type
+    - if @address_result.present?
+      %li
+        Distance: #{t.distance_to(@address_result).round(2)} mi
     %hr
   .pagination
     = will_paginate @trucks, inner_window: 1, outer_window: 1

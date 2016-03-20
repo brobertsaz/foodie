@@ -1,0 +1,49 @@
+
+- address: "90 TEHAMA ST"
+  longitude: -122.397471456326
+  latitude: 37.7867446133897
+  location_description: "TEHAMA ST: 01ST ST to MALDEN ALY (1 - 90)"
+  facility_type: "Truck"
+  name: "Steve's Mobile Deli"
+
+- address: "611 FOLSOM ST"
+  longitude: -122.396536309753
+  latitude: 37.7849798870735
+  location_description: "02ND ST: FOLSOM ST to DOW PL (300 - 353)"
+  facility_type: "Truck"
+  name: "Celtic Catering"
+
+- address: "222 02ND ST"
+  longitude: -122.398235074249
+  latitude: 37.786319798284
+  location_description: "02ND ST: HOWARD ST to TEHAMA ST (200 - 227)"
+  facility_type: "Truck"
+  name: "Quan Catering"
+
+- address: "19 CLEMENTINA ST"
+  longitude: -122.395447605152
+  latitude: 37.787157744174
+  location_description: "CLEMENTINA ST: 01ST ST to ECKER ST (1 - 37)"
+  facility_type: "Truck"
+  name: "Paradise Catering"
+
+- address: "525 HOWARD ST"
+  longitude: -122.396322298302
+  latitude: 37.7878141077683
+  location_description: "HOWARD ST: 01ST ST to MALDEN ALY (500 - 589)"
+  facility_type: "Truck"
+  name: "Steve's Mobile Deli"
+
+- address: "124 FOLSOM ST"
+  longitude: -122.391392669926
+  latitude: 37.7900747773418
+  location_description: "SPEAR ST: HOWARD ST to FOLSOM ST (200 - 299)"
+  facility_type: "Push Cart"
+  name: "Curbside Coffee"
+
+- address: "201 FOLSOM ST"
+  longitude: -122.391181920263
+  latitude: 37.7881452832928
+  location_description: "MAIN ST: FOLSOM ST to HARRISON ST (300 - 399)"
+  facility_type: "Truck"
+  name: "Liang Bai Ping"
