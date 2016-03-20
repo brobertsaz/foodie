@@ -60,5 +60,5 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem "ruby 2.1.5p273"
+gem "ruby", '2.1.5p273'
 gem 'rails_12factor', group: :production
