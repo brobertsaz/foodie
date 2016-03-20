@@ -1,14 +1,16 @@
 %ul
   - if @trucks
-    - binding.pry
-    - @trucks.each do |t|
+    - @trucks.each do |truck|
       %li.title
-        = link_to t.name, show_location_food_trucks_path(truck: t), method: :put, remote: :true
-      %li= t.address
-      %li= t.facility_type
+        = link_to truck.name, show_location_food_trucks_path(truck: truck), method: :put, remote: :true
+      %li= truck.address
+      %li= truck.facility_type
+      - binding.pry
+      - if truck.food_items.present?
+        %li= truck.food_items
       - if @address_result.present?
         %li
-          Distance: #{t.distance_to(@address_result).round(2)} mi
+          Distance: #{truck.distance_to(@address_result).round(2)} mi
       %hr
     .pagination
       = will_paginate @trucks, inner_window: 1, outer_window: 1
@@ -18,3 +20,5 @@
         = @truck.name
       %li= @truck.address
       %li= @truck.facility_type
+      - if @truck.food_items.present?
+        %li= @truck.food_items
