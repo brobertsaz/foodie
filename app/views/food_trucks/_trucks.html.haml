@@ -1,5 +1,6 @@
-%ul
-  - if @trucks
+
+- if @trucks
+  %ul
     - @trucks.each do |truck|
       %li.title
         = link_to truck.name, show_location_food_trucks_path(truck: truck), method: :put, remote: :true
@@ -13,11 +14,11 @@
       %hr
     .pagination
       = will_paginate @trucks, inner_window: 1, outer_window: 1
-  - elsif @truck
-    %ul
-      %li.title
-        = @truck.name
-      %li= @truck.address
-      %li= @truck.facility_type
-      - if @truck.food_items.present?
-        %li= @truck.food_items
+- elsif @truck
+  %ul
+    %li.title
+      = @truck.name
+    %li= @truck.address
+    %li= @truck.facility_type
+    - if @truck.food_items.present?
+      %li= @truck.food_items
