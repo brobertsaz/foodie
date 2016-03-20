@@ -4,7 +4,7 @@
     %p You are hungry and you NEED to know where the closest food truck is!
 
 .search-bar
-  = bootstrap_form_tag url: find_closest_trucks_pages_path, method: :get, remote: :true do |f|
+  = bootstrap_form_tag url: find_closest_trucks_food_trucks_path, method: :get, remote: :true do |f|
     = f.text_field :address, hide_label: true, placeholder: "Enter your address..."
     = f.submit "Go", class: 'btn btn-primary btn-sm'
 

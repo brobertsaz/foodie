@@ -1,4 +1,4 @@
-class PagesController < ApplicationController
+class FoodTrucksController < ApplicationController
 
   def index
     @trucks = FoodTruck.paginate(:page => params[:page], :per_page => 5)
@@ -29,4 +29,15 @@ class PagesController < ApplicationController
     end
   end
 
+  def show_location
+    @truck = FoodTruck.find params[:truck]
+    @hash = Gmaps4rails.build_markers(@truck) do |truck, marker|
+      marker.lat truck.latitude
+      marker.lng truck.longitude
+      marker.title truck.name
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
 end
