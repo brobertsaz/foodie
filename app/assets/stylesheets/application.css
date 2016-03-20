@@ -76,3 +76,7 @@ ul {
 #map {
   margin-top: 20px;
 }
+
+.jumbotron {
+  padding-top: 75px !important;
+}
