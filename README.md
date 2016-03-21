@@ -20,6 +20,15 @@ The live app is located [here](http://sffoodie.herokuapp.com/)
 
 The data is pretty much static as it represents the permitted areas for the food trucks.  For this reason and simplicity sake, I created a seed file to populate the food truck database.  Had this been for live truck locations, I would not have gone with this approach.  For a "live" application, I would create a nightly rake task to update any new permitted locations.
 
+### Install
+
++ git clone git@github.com:brobertsaz/foodie.git@github
++ cd into foodie
++ bundle
++ rake db:setup
++ rails server
+
+
 ### The Stack
 + Ruby on Rails
 + PostgreSQl
