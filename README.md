@@ -31,5 +31,9 @@ The data is pretty much static as it represents the permitted areas for the food
 
 
 ### TO DO
++ Change the plus sign on click
++ Adjust the zoom for the single location
++ Allow to use the users location based on IP
++ Add filtering based on the food items
 
 Reasoning behind your technical choices, including architectural. Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project.
