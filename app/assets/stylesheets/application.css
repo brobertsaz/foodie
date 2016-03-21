@@ -82,6 +82,13 @@ ul {
 .distance {
   float: right;
 }
+.show-food-items {
+  color: #2e73b4;
+  cursor: pointer;
+}
+.food-item-section {
+  display: none;
+}
 @media only screen and (max-width: 767px) {
   li {
     font-size: 18px;

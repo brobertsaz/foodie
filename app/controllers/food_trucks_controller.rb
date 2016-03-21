@@ -6,13 +6,18 @@ class FoodTrucksController < ApplicationController
       marker.lat truck.latitude
       marker.lng truck.longitude
       marker.title truck.name
+      marker.picture({
+        "url" => "assets/restaurants.png",
+        "width" => 40,
+        "height" => 44
+      })
     end
   end
 
   def find_closest_trucks
     @address_result = Geocoder.coordinates params[:address]
     @location = {:lat => @address_result[0], :lng => @address_result[1], :marker_title => "Your Location", picture: {
-        url: "https://lh4.ggpht.com/Tr5sntMif9qOPrKV_UVl7K8A_V3xQDgA7Sw_qweLUFlg76d_vGFA7q1xIKZ6IcmeGqg=w44",
+        url:  "assets/home.png",
         width:  44,
         height: 44
       }
@@ -22,6 +27,11 @@ class FoodTrucksController < ApplicationController
       marker.lat truck.latitude
       marker.lng truck.longitude
       marker.title truck.name
+      marker.picture({
+        "url" => "assets/food.png",
+        "width" => 40,
+        "height" => 44
+      })
     end
 
     respond_to do |format|
@@ -35,6 +45,11 @@ class FoodTrucksController < ApplicationController
       marker.lat truck.latitude
       marker.lng truck.longitude
       marker.title truck.name
+      marker.picture({
+        "url" => "assets/food.png",
+        "width" => 40,
+        "height" => 44
+      })
     end
     respond_to do |format|
       format.js

@@ -10,7 +10,11 @@
       %li= truck.address
       %li= truck.facility_type
       - if truck.food_items.present?
-        %li= truck.food_items
+        .food-items
+          Food Items:
+          %i.fa.fa-plus-circle.show-food-items
+          .food-item-section
+            %li= truck.food_items
       %hr
     .pagination
       = will_paginate @trucks, inner_window: 1, outer_window: 1
@@ -21,4 +25,8 @@
     %li= @truck.address
     %li= @truck.facility_type
     - if @truck.food_items.present?
-      %li= @truck.food_items
+      .food-items
+        Food Items:
+        %i.fa.fa-plus-circle.show-food-items
+        .food-item-section
+          %li= @truck.food_items
