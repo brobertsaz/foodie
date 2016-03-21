@@ -25,8 +25,6 @@
     %li= @truck.address
     %li= @truck.facility_type
     - if @truck.food_items.present?
-      .food-items
+      %li
         Food Items:
-        %i.fa.fa-plus-circle.show-food-items
-        .food-item-section
-          %li= @truck.food_items
+        = @truck.food_items

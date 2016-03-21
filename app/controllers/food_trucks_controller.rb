@@ -15,7 +15,6 @@ class FoodTrucksController < ApplicationController
   end
 
   def find_closest_trucks
-    binding.pry
     @address_result = Geocoder.coordinates params[:address]
     @location = {:lat => @address_result[0], :lng => @address_result[1], :marker_title => "Your Location", picture: {
         url:  "assets/home.png",
@@ -29,7 +28,7 @@ class FoodTrucksController < ApplicationController
       marker.lng truck.longitude
       marker.title truck.name
       marker.picture({
-        "url" => "assets/food.png",
+        "url" => "assets/restaurants.png",
         "width" => 40,
         "height" => 44
       })
@@ -47,7 +46,7 @@ class FoodTrucksController < ApplicationController
       marker.lng truck.longitude
       marker.title truck.name
       marker.picture({
-        "url" => "assets/food.png",
+        "url" => "assets/restaurants.png",
         "width" => 40,
         "height" => 44
       })

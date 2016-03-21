@@ -5,8 +5,7 @@
   latitude: 37.786319798284
   location_description: "02ND ST: HOWARD ST to TEHAMA ST (200 - 227)"
   facility_type: "Truck"
-  food_items:
-   "Cold Truck: Soft drinks: cup cakes: potato chips: cookies: gum: sandwiches (hot & cold): peanuts: muffins: coff (hot & cold): water: juice: yoplait: milk: orange juice: sunflower seeds: can foods: burritos: buscuits: chimichangas: rice krispies"
+  food_items: "Cold Truck: Soft drinks: cup cakes: potato chips: cookies: gum: sandwiches (hot & cold): peanuts: muffins: coff (hot & cold): water: juice: yoplait: milk: orange juice: sunflower seeds: can foods: burritos: buscuits: chimichangas: rice krispies"
 
 - name: "Paradise Catering"
   address: "19 CLEMENTINA ST"

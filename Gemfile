@@ -58,6 +58,8 @@ group :test do
   gem 'capybara', '2.4.0'
   gem 'factory_girl_rails'
   gem 'selenium-webdriver'
+  gem 'database_cleaner'
+  gem 'simplecov', :require => false
 end
 
 
